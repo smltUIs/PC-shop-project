@@ -1,0 +1,160 @@
+/*main*/
+#main{
+	width: 1000px;
+	margin: 0 auto;
+	margin-bottom: 80px;
+}
+#logo_tit{
+	text-align: center;
+	margin-top: 24px;
+	font-weight: bold;
+	color: #333333;
+	vertical-align: middle;
+	font-size: 0;
+}
+#logo_tit .english{
+	font-size: 50px;
+	font-style: italic;
+	font-family: Arial;
+}
+#logo_tit .chiense{
+	font-size: 20px;
+	margin-left: 8px;
+}
+.type_list{
+	width: 100%;
+	margin-top: 40px;
+	clear: both;
+	border-bottom: 1px solid #ededed;
+	float: left;
+	position: relative;
+}
+.type_list li{
+	height: 25px;
+	float: left;
+	margin-right: 40px;
+}
+.type_list li a{
+	display: block;
+	height: 25px;
+	font-size: 12px;
+	color: #333333;
+	margin-top: 1px;
+	padding: 0 8px;
+}
+/*container*/
+#container{
+	width: 100%;
+	clear: both;
+}
+#container li{
+	width: 318px;
+	height: 250px;
+	margin: 25px 0 0 23px;
+	float: left;
+}
+#container .li_1{
+	margin-left: 0;
+	clear: left;
+}
+#container .imgBox{
+	width: 318px;
+	height: 190px;
+	color: #333333;
+}
+#container p a{
+	color: #333333;
+}
+#container .imgBox img{
+	width: 318px;
+	height: 190px;
+}
+#container li p{
+	color: #333333;
+	text-align: center;
+	line-height: 18px;
+	font-size: 12px;
+	padding: 9px 40px 0 40px;
+}
+#container li .desc{
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	line-height: 16px;
+	padding: 15px 30px 0;
+}
+#magic_line{
+	width: 64px;
+	height: 2px;
+	position: absolute;
+	left: 0px;
+	overflow: hidden;
+	bottom: -1px;
+	border-bottom:  1px solid #333333;
+}
+.clearNull{
+	width: 100%;
+	height: 1px;
+	font-size: 0;
+	clear: both;
+	padding: 0;
+	margin: 0;
+	line-height: 0;
+}
+/*page*/
+#page{
+	width: 100%;
+	text-align: right;
+	vertical-align: middle;
+	color: #4f4f4f;
+	padding-top: 50px;
+	height: auto;
+	clear: both;
+	font-size: 12px;
+}
+#page a{
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 5px 0 5px;
+	color: #878787;
+	font-size: 13px;
+}
+#page a:hover{
+	background: #CCCCCC;
+	color: white;
+}
+#page .pre{
+	width: 61px;
+	height: 19px;
+	background: url(../img/icon.png) no-repeat;
+	background-position: -23px -580px;
+	border: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+#page .checked{
+	background: #98B5D5;
+	color: white;
+}
+#page .next{
+	width: 61px;
+	height: 19px;
+	background: url(../img/icon.png) no-repeat;
+	background-position: -23px -599px;
+	border: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+#page .goPage{
+	border: 1px solid #98B5D5;
+	width: 24px;
+}
+#page .sureBtn{
+	width: 41px;
+	height: 19px;
+	background: url(../img/icon.png) no-repeat;
+	background-position: -85px -581px;
+	border:  none;
+	cursor: pointer;
+	vertical-align: middle;
+}

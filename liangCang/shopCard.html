@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/shopCard.css"/>
+	</head>
+	<body>
+		<div id="TOP"></div>
+		<!--main-->
+		<div id="main">
+			<div class="shopStep">
+				|
+				<div class="item"><span class="txt chk">购物车</span></div>
+				| 
+				<div class="item"><span class="txt">付款</span></div>
+				|
+			</div>
+			<div class="shopCardList">
+				<table class="carTab">
+					<tr>
+						<th class="txt1" width="110">
+							<input id="checkAll" type="checkbox" class="chkbox" checked="checked"/> 全选
+						</th>
+						<th width="300">良品</th>
+						<th width="120">数量</th>
+						<th width="160">单价（元）</th>
+						<th width="160">小计（元）</th>
+						<th>操作</th>
+					</tr>
+
+					<tr class="itemList2">
+						<td valign="top" class="fir_td" id="checkBox">
+							<input id="card_check" type="checkbox" class="chkbox" checked/>
+							<a class="shop_Con" href="javascript:;" target="_blank">
+								<img src="image/262564.jpg" alt="" />
+							</a>
+						</td>
+						<td class="txt1">
+							<p class="t"><a href="javascript:;">黄铜十字台灯 | 专属你</a></p>
+							<p class="b">数量：一台；</p>
+							<p class="b" style="color:#d20019;"></p>
+						</td>
+						<td>
+							<span class="opt minus"><img src="image/minus.png"/></span>
+							<input class="num2" type="text" readonly="" value="1"/>
+							<span class="opt add"><img src="image/add.png" /></span>
+							<p class="blue">库存紧张</p>
+						</td>
+						<td class="price"><span>599.00</span></td>
+						<td class="sumPrice"><span class="totP">599.00</span></td>
+						<td><a class="del" href="javascript:;">删除</a></td>
+					</tr>
+					<tr class="itemList2">
+						<td valign="top" class="fir_td" id="checkBox">
+							<input id="card_check" type="checkbox" class="chkbox" checked/>
+							<a class="shop_Con" href="javascript:;" target="_blank">
+								<img src="image/262485.jpg" alt="" />
+							</a>
+						</td>
+						<td class="txt1">
+							<p class="t"><a href="javascript:;">爱心陶瓷托盘 | 满满少</a></p>
+							<p class="b">套装:三只套装;</p>
+							<p class="b" style="color:#d20019;"></p>
+						</td>
+						<td>
+							<span class="opt minus"><img src="image/minus.png"/></span>
+							<input class="num2" type="text" readonly="" value="1"/>
+							<span class="opt add"><img src="image/add.png" /></span>
+							<p class="blue"></p>
+						</td>
+						<td class="price"><span>48.00</span></td>
+						<td class="sumPrice"><span class="totP">48.00</span></td>
+						<td><a class="del" href="javascript:;">删除</a></td>
+					</tr>
+					<tr class="itemList2" >
+						<td valign="top" class="fir_td">
+							<input id="card_check" type="checkbox" class="chkbox" checked/>
+							<a class="shop_Con" href="javascript:;" target="_blank">
+								<img src="image/250817.jpg" alt="" />
+							</a>
+						</td>
+						<td class="txt1">
+							<p class="t"><a href="javascript:;">超轻旅行箱 藏蓝条纹款 </a></p>
+							<p class="b">尺寸:20寸;</p>
+							<p class="b" style="color:#d20019;">五折-德国红点奖高品质旅行箱</p>
+						</td>
+						<td>
+							<span class="opt minus"><img src="image/minus.png"/></span>
+							<input class="num2" type="text" readonly="" value="1"/>
+							<span class="opt add"><img src="image/add.png" /></span>
+							<br />
+							<p class="blue">库存紧张</p>
+						</td>
+						<td class="price">
+							<span>1098.00</span>
+							<br />
+							<span style="color: #d20019;text-decoration: line-through;">￥<span>2196.00</span></span>
+						</td>
+						<td class="sumPrice">
+							<span class="totP">1098.00</span>
+							<br />
+							<span style="color: #d20019;text-decoration: line-through;">￥<span>2196.00</span></span>
+						</td>
+						<td><a class="del" href="javascript:;">删除</a></td>
+					</tr>
+				</table>
+			</div>
+			<div class="shopCompulate">
+				<form id="cardForm" method="post" action="">
+					<p>
+						良品总价 <font style="font-size: 18px;">/</font>
+						<span class="totalPrice">￥<font id="show_price">2584.00</font></span>
+					</p>
+					<p class="oddPrice" id="oddPrice">3682.00</p>
+					<p id="oddSave" style="color: rgb(210, 0, 25);">
+						&nbsp;为您节省<span id="shpw_save">1098.00</span>元&nbsp;
+					</p>
+					<p><input class="checkoutBtn" type="button" value="立即结算" /></p>
+					<fieldset id="">
+						<legend><a href="javascript:;">继续购物</a></legend>
+						
+						
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div id="Bot"></div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="js/tools.js" ></script>
+<script type="text/javascript" src="js/baseStyle.js" ></script>
+<script type="text/javascript" src="js/cookieTools.js" ></script>
+<script type="text/javascript" src="js/eventTools.js" ></script>
+<script type="text/javascript" src="js/shopCard.js" ></script>
+<script type="text/javascript">
+	jQuery('#TOP').load('publicTop.html');
+	jQuery('#Bot').load('publicBottom.html');
+	//全选
+	$(function(){
+		$("#checkAll").bindCheck($(".itemList2 :checkbox"));
+	})
+</script>

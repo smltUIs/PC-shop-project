@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>良仓-注册</title>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<style type="text/css">
+			input::-webkit-input-placeholder{
+	            color:white;
+	        }
+		</style>
+	</head>
+	<body class="resBody">
+		<!--注册-->
+		<div class="clearfix"></div>
+		<div id="main">
+			<form id="regForm" name="regForm">
+				<a class="logoImg" href="javascript:;"><img src="img/logo_icon.png"/></a>
+				<ul>
+					<li><label class="info">手机号</label><input class="val"  id="phone" type="text"  name="phone" value="请输入手机号"><span id="phoneSpan"></span></li>
+					<li class="two"><label class="info spanBox">验证码</label><input class="val"  id="yzmId" type="text" name="yzm" value="输入验证码">
+					<!--<span class="free">免费获取验证码</span>-->
+					<span id="YZcode"></span>
+					<a id="getRanNum" href="javascritp:;"><span id="yzmSpan">看不清，换一张</span></a>
+					</li>
+					<li class="sparate">
+						<label class="info dou">创建密码</label><input class="val"  id="password" type="password" name="password" value="6-20位字符组成，区分大小写">
+			
+						<div class="changeColor">
+							<span id="weak"></span>
+							<span id="normal"></span>
+							<span id="strong"></span>
+						</div>
+					</li>					
+					<li><label class="info">密码确认</label><input class="val" id="surePassId" type="password" name="surePass" value="确认密码"><span id="surePassSpan"></span></li>
+					<div class="agreeBox">
+						<input class="agree" type="checkbox" checked/>&nbsp;同意&nbsp;
+						<a href="javascript:;">良仓注册条款</a>
+					</div>
+					<div class="instantReg">立即注册</div>
+					<div class="shareWay">
+						<a class="focus" href="javascript:;" title="QQ">
+							<img src="img/qqnormal.png" alt="" />
+						</a>
+						<a class="focus sinaImg" href="javascript:;" title="新浪微博">
+							<img src="img/xinlangnormal.png" alt="" />
+						</a>
+						<a class="focus dbImg" href="javascript:;" title="豆瓣">
+							<img src="img/doubannormal.png" alt="" />
+						</a>
+						<a class="focus txImg" href="javascript:;" title="腾讯微博">
+							<img src="img/tengxunnormal.png" alt="" />
+						</a>
+						<a class="loginLC" href="login.html">登录良仓</a>
+					</div>
+				</ul>
+			</form>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/newTool.js"></script>
+<script type="text/javascript" src="js/regCon.js"></script>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		
+		for(let i=0; i<my$(".val").length; i++){
+			my$(".val")[i].onfocus = function(){
+				this.xx = this.value;
+				this.value = "";
+			}
+			my$(".val")[i].onblur = function(){
+				this.value = this.xx;
+			}
+		}
+		//获取随机验证码
+			my$('#getRanNum').onclick = function(){
+				var str = '';
+				for(var i=0;i<10;i++){
+					var a = String.fromCharCode(random(48,57));//数字
+					var b = String.fromCharCode(random(65,90));//大写字母
+					var c = String.fromCharCode(random(97,122));//小写字母
+					str += a + b + c;
+				}	
+				var randomStr = "";
+				for(var j=0;j<4;j++){
+					var index = random(0,str.length-1);
+					randomStr += str[index];
+					//随机颜色线条
+					let oDiv = document.createElement('div');
+					oDiv.style.cssText = "width: 2px;height: 20px;"
+					oDiv.style.background = getColor();
+					my$("#YZcode").appendChild(oDiv);
+				}
+				my$('#YZcode').style.color = getColor();
+				my$('#YZcode').innerHTML = randomStr;
+			}	
+		//获取随机数
+		function random(a,b){
+			return Math.round(Math.random()*(b-a)+a);
+		}	
+			
+		my$('#phone').onblur = function(){		
+			if(check(this.value,"phone")){
+				my$('#phoneSpan').innerHTML = '';
+			}else{
+				alert("手机号有误，请重新输入");
+				my$('#phone').value = '';
+				return;
+			}
+		}
+		my$('#yzmId').onblur = function(){		
+			if(this.value == my$("#YZcode").innerHTML){
+				my$('#phoneSpan').innerHTML = '';
+			}else{
+				alert("验证码有误，请重新输入");
+				my$('#yzmId').value = '';
+			}
+		}
+		my$('#password').onblur = function(){		
+			if(this.value.length < 6 && this.value.length > 20){
+				alert("密码长度6-20位，请重新输入");
+			}
+		}
+		my$('#surePassId').onblur = function(){		
+			if(this.value == my$('#password').value){
+//				my$('#surePassSpan').innerHTML = '';
+			}else{
+				alert("确认密码不对，请重新输入");
+				my$('#surePassId').value = '';
+			}
+		}
+		
+		function check(str,type){
+			switch(type){
+				
+				case 'phone':
+					var reg = /^1[3|5|7|8]\d{9}$/;
+					break;
+				case 'password':
+					var reg = /^[\w][\w]{5,17}$/;
+					break;
+				case 'surePass':
+					var reg = /^[a-zA-Z_](\w{6,17})$/;
+					break;			
+				default:;
+			}
+			return reg.test(str);
+		}
+
+		my$('#password').onkeyup = function(){
+			//弱：纯数字、纯字母、纯特殊符号
+			//中：两者的组合
+			//强：三者的组合
+			var pass = this.value;
+			if(pass.length <=6 && pass.length >=20){
+				alert("密码长度不合适，请重新输入");
+				return;
+			}else{				
+				//分别查看字符串中是否有数字、字母、特殊字符
+				//1.数字
+				var hasNum = false;
+				var regNum = /\d/;
+				if(regNum.test(pass)){
+					hasNum = true;
+				}
+				//2.字母
+				var hasLetter = false;
+				var regLetter = /[a-zA-Z]/;
+				if(regLetter.test(pass)){
+					hasLetter = true;
+				}
+				//3.特殊符号
+				var hasSpecial = false;
+				var regSpecial = /[~!@#my$%^&*()-+{}]/;
+				if(regSpecial.test(pass)){
+					hasSpecial = true;
+				}
+				//判断强中弱
+				var level = hasNum + hasLetter + hasSpecial;
+				if(level == 1){//弱：纯数字、纯字母、纯特殊符号
+					my$('#weak').style.backgroundColor = 'red';
+					my$('#normal').style.backgroundColor = 'white';
+					my$('#strong').style.backgroundColor = 'white';
+				}else if(level == 2){//中：两者的组合
+					my$('#weak').style.backgroundColor = 'white';
+					my$('#normal').style.backgroundColor = 'yellow';
+					my$('#strong').style.backgroundColor = 'white';
+				}else if(level == 3){//强：三者的组合
+					my$('#weak').style.backgroundColor = 'white';
+					my$('#normal').style.backgroundColor = 'white';
+					my$('#strong').style.backgroundColor = 'green';
+				}
+			}
+		}		
+	}
+</script>

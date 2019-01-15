@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="shortcut icon" href="img//bitbug_favicon.ico" /> 
+	</head>
+	<body>
+		<!--headers-->
+		<header>
+			<div id="header">
+				<div id="logo">
+				<!--logo图-->
+				</div>
+				<ul id="login_res">
+					<li class="one">
+						<a class="login" href="login.html">登录</a>
+						<a class="resgiter" href="register.html">注册</a> |
+					</li>
+					<li><a class="shopCard" href="javascript:;" onclick="jQuery('.popWindow').show()">购物车</a> | </li>
+					<li><a class="info" href="javascript:;">消息</a> | </li>
+					<li><a class="addGoods" href="javascript:;">添加良品</a></li>
+				</ul>
+			</div>			
+		</header>
+		<!-- header_top -->
+		<div id="header_top">
+			<div id="bar">
+				<ul class="menu">
+					<li><a class="first hov" href="index.html">首页</a></li>
+					<li class="subli">
+						<a href="shop.html" class="hov">商店</a>						
+						<!--二级导航栏-->
+						<div class="subHide" id="storeItem">
+							<div class="storeLeft f1">
+								
+							</div>
+						</div>
+					</li>
+					<li class="subli">
+						<a href="maganize.html" class="hov mag">杂志</a>
+						<div class="subHide maganize" id="maganize">
+							<a href="javascript:;">趣物</a>
+							<a href="javascript:;">数码</a>
+							<a href="javascript:;">汽车</a>
+							<a href="javascript:;">文化</a>
+							<a href="javascript:;">时尚</a>
+							<a href="javascript:;">美食</a>
+							<a href="javascript:;">建筑</a>
+							<a href="javascript:;">空间</a>
+							<a href="javascript:;">圈子</a>
+							<a href="javascript:;">清单</a>
+							<a href="javascript:;">活动</a>
+							<a href="javascript:;">视频</a>
+						</div>
+					</li>
+					<li class="subli">
+						<a href="share.html" class="hov sha">分享</a>
+						<div class="subHide" id="share">
+							<a href="javascript:;">男士</a>
+							<a href="javascript:;">家具</a>
+							<a href="javascript:;">数码</a>
+							<a href="javascript:;">工具</a>
+							<a href="javascript:;">玩具</a>
+							<a href="javascript:;">美容</a>
+							<a href="javascript:;">孩子</a>
+							<a href="javascript:;">宠物</a>
+							<a href="javascript:;">饮食</a>
+							<a href="javascript:;">运动</a>
+							<a href="javascript:;">文化</a>
+							<a href="javascript:;">女生</a>
+						</div>
+					</li>
+					<li><a href="daRen.html" class="hov">达人</a></li>
+				</ul>
+				<div class="search">
+					<a href="javascript:;"><img src="img/search.jpg" alt=""></a>
+				</div>
+			</div>	
+		</div>
+		
+		<!--登录弹出框-->
+		<div class="popWindow pop" id="loginPopWin">
+			<div id="logCont">
+				<form id="popLoginForm" action="">
+					<div class="top">
+						登录良仓
+						<p class="closed" title="关闭" onclick="jQuery('.popWindow').remove();removeDivLayer();"></p>
+					</div>
+					<div class="f1 leftRig">
+						<div class="itemLog">
+							<input id="username" class="inputStr" type="text" name="username"  />
+						</div>
+						<div class="itemLog">
+							<input id="password" class="inputStr"  type="password" name="username"  />
+						</div>
+						<div class="textMes">
+							<div class="left_1 f1">
+								<input class="isCheck" type="checkbox"/>
+								<label class="expires" for="">7天内自动登录</label>
+							</div>
+							<div class="right_1 fr">
+								<a class="forgetPwd" href="javascript:;">忘记密码？</a>
+							</div>
+							<input class="inputBth" type="button" value="登录良仓" onclick="location.href='login.html'"/>
+							<a class="menu" href="register.html">注册良仓</a>
+						</div>
+					</div>
+					<div class="fr leftRig">
+						<div class="thirdParty">
+							<p class="topTit">第三方登录：</p>
+							<a class="qqwb" href="javascript:;"></a>
+							<a class="QQ" href="javascript:;"></a>
+							<a class="weibo" href="javascript:;"></a>
+							<a class="douban" href="javascript:;"></a>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="regCon" class="hide"></div>
+		</div>
+		<div id="sysMes" class="popWindow pop2">
+			<div class="popHeader">
+				<span class="close" title="关闭" onclick="jQuery('.popWindow').remove();removeDivLayer();></span>
+			</div>			
+			<div class="popFooter"></div>
+			<div class="content">
+				<div class="dl">登录失败，用户名或密码错误！</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="js/tools.js" ></script>
+<script type="text/javascript">
+	$(".shopCard")[0].onclick = function(){
+		$("#loginPopWin").style.display = "block";
+	}
+	
+	$(".mag")[0].onmouseover = function(){
+		$(".maganize")[0].style.display = "block";
+	}
+	$(".mag")[0].onmouseout = function(){
+		$(".maganize")[0].style.display = "none";
+	}
+	$(".sha")[0].onmouseover = function(){
+		$("#share").style.display = "block";
+	}
+	$(".sha")[0].onmouseout = function(){
+		$("#share").style.display = "none";
+	}
+</script>

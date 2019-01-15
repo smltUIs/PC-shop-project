@@ -1,0 +1,504 @@
+/*main*/
+#main{
+	width: 1000px;
+	margin: 0 auto;
+	clear: both;
+}
+#main .start{
+	clear: both;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	color: rgb(191, 191, 191);
+	font-weight: 100;
+	font-size: 12px;
+	vertical-align: middle;
+}
+#main .start a{
+	color: #666666;
+}
+/*goodsList*/
+#goodsList{
+	width: 1000px;
+	height: 370px;
+	overflow: hidden;
+	position: relative;
+	margin: -5px auto 10px;
+	z-index: 3;
+}
+#goodsList .goPre{
+	position: absolute;
+	z-index: 200;
+	top: 180px;
+	left: 0;
+	height: 40px;
+	width: 20px;
+	background: url(../image/go_circle_pre_white.png) no-repeat;
+	background-position: -20px 0;
+}
+#goodsList .goNext{
+	position: absolute;
+	z-index: 200;
+	top: 180px;
+	left: 980px;
+	height: 40px;
+	width: 20px;
+	background: url(../image/go_circle_next_white.png) no-repeat;
+	background-position: 0 0;
+}
+a{
+	color: #878787;
+}
+.allGoodsList{
+	width: 2000px;
+	height: 370px;
+	position: relative;
+}
+.goodsItem{
+	width: 306px;
+	height: 345px;
+	position: relative;
+	display: inline-block;
+	margin: 20px 0;
+	overflow: hidden;
+}
+.goodsInfo{
+	white-space: nowrap;
+	width: 306px;
+	height: 34px;
+}
+.goodsInfo .headImg{
+	display: inline-block;
+	width: 34px;
+	height: 34px;
+	float: left;
+}
+.goodsInfo .headImg img{
+	width: 34px;
+	height: 34px;
+	padding: 0s;
+}
+.goodsInfo .goodsDetail{
+	width: 270px;
+	height: 34px;
+	float: left;
+	color: #333333;
+	margin-left: 2px;
+	background: url(../image/block_bg_gray_266.png) no-repeat;
+}
+.goodsInfo .goodsDetail .userName{
+	display: inline-block;
+	float: left;
+	white-space: nowrap;
+	max-width: 140px;
+	height: 26px;
+	overflow: hidden;
+	padding: 8px 16px 0 8px;
+	font-size: 12px;
+	vertical-align: middle;
+}
+.goodsInfo .goodsDetail .favCount{
+	display: inline-block;
+	float: right;
+	overflow: hidden;
+	width: 45px;
+	height: 26px;
+	padding: 8px 18px 0 8px;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	background: url(../image/xin_black.png) no-repeat 45px 10px;
+}
+.goodsBgImg{
+	width: 306px;
+	height: 306px;
+	margin-top: 5px;
+	display: inline-block;
+	overflow: hidden;
+	float: left;
+	position: relative;
+	margin-left:0;
+	margin-right: 0;
+}
+.goodsBgImg a img{
+	max-width: 306px;
+	max-height: 306px;
+}
+.goodsBgImg a .smallImg{
+	width: 232px;
+	height: 306px;
+	position: absolute;
+	top: 0;
+	left: 38px;
+}
+.goodsBgImg a .bgLeft{
+	width: 34px;
+	height: 304px;
+	position: absolute;
+	background: url(../img/bg_left.jpg) 0 0 no-repeat;
+}
+.goodsBgImg a .bgRight{
+	width: 34px;
+	height: 304px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: url(../img/bg_left.jpg) no-repeat;
+}
+/*遮罩层*/
+.goodsPrice{
+	display: none;
+	width: 306px;
+	height: 306px;
+	position: absolute;
+	top: 39px;
+	left: 0;
+	font-size: 12px;
+	color: white;
+	text-align: center;
+}
+.goodsItem:hover .goodsPrice{
+	display: block;
+}
+.goodsPrice .goodsTip{
+    background: rgba(0, 0, 0, 0.45) !important;
+    white-space: nowrap;
+    top: 39px;
+    left: 0;
+    width: 306px;
+    height: 30px;
+    color: #FFFFFF;
+    padding: 3px 0;
+}
+.goodsPrice .goodsTip .msgIcon{
+	/*display: none;*/
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-right: 2px;
+	position: relative;
+	background: url(../image/icon_msg.png) center center no-repeat;
+}
+.goodsPrice .goodsTip .sendIcon{
+	cursor: pointer;
+	display: block;
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-right: 2px;
+	position: relative;
+	background: url(../image/icon_send.png) center center no-repeat;
+}
+.goodsPrice .goodsTip .money{
+	display: inline-block;
+	width: 60px;
+	height: 22px;
+	float: left;
+	color: white;
+	font-size: 18px;
+	text-align: left;
+	padding: 5px;
+	position: relative;
+}
+.goodsPrice .shadow{
+	display: block;
+	width: 226px;
+	height: 112px;
+	padding: 100px 40px 60px 40px;
+	clear: both;
+	background: rgba(0, 0, 0, .22) !important;
+	font-size: 13px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 22px;
+	word-break: break-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.allGoodsList .vBlank{
+	display: inline-block;
+	width:30px;
+	height: 345px;
+}
+#smallTlt{
+	margin-top: 30px;
+	text-align: left;
+	border-top: none;
+	width: 1000px;
+	height: 20px;
+	border-bottom: 1px solid #CCCCCC;
+	color: #666666;
+	padding: 5px 0;
+	position: relative;
+	font-size: 12px;
+}
+#smallTlt span{
+	display: inline-block;
+	cursor: pointer;
+}
+#smallTlt .priceCon{
+	display: none;
+	width: 87px;
+	position: absolute;
+	top: 25px;
+	left: -33px;
+	text-align: left;
+	cursor: default;
+	z-index: 200;
+	
+}
+#smallTlt .priceCon .pc_top{
+	height: 12px;
+	background: url(../image/pc_bg_top.png) no-repeat;
+}
+#smallTlt .priceCon .pc_bottom{
+	width: 87px;
+	height: 12px;
+	background: url(../image/pc_bg_bottom.png) no-repeat;
+}
+#smallTlt .priceCon .pc_body{
+	padding: 5px 0;
+	background: url(../image/pc_bg_vline.png) repeat-y;
+}
+#smallTlt .priceCon .pc_body .pc_Con{
+	width: 83px;
+	padding: 0 2px 0 2px;
+}
+#smallTlt .priceCon .pc_body .pc_Con a{
+	display: inline-block;
+	font-size: 12px;
+	color: white;
+	padding: 4px 1px 4px 5px;
+}
+#smallTlt .nav_price:hover .priceCon{
+	display: block;
+}
+.s_goodsList{
+	width: 1000px;
+	margin: 10px auto;
+}
+.s_goodsItem{
+	width: 235px;
+	height: 269px;
+	position: relative;
+	display: inline-block;
+	z-index: 1;
+	margin: 4px 20px 0 0;
+	float: left;
+	overflow: hidden;
+}
+.s_last{
+	margin-right: 0;
+}
+.s_goodsInfo{
+	width: 235px;
+	height: 34px;
+	white-space: nowrap;
+}
+.s_headImg{
+	width: 34px;
+	height: 34px;
+	float: left;
+}
+.s_headImg img{
+	width: 34px;
+	height: 34px;
+}
+.s_goodsDetail{
+	width: 200px;
+	height: 34px;
+	float: left;
+	color: #333333;
+	margin-left: 1px;
+	background: url(../image/block_bg_gray_200.png) no-repeat;
+}
+.s_goodsDetail .s_userName{
+	display: inline-block;
+	white-space: nowrap;
+	max-width: 100px;
+	overflow: hidden;
+	padding: 8px 16px 0 8px;
+	float: left;
+	font-size: 12px;
+	background: url(../image/daren.png) right no-repeat;
+}
+.s_goodsDetail .s_favCount{
+	display: inline-block;
+	background: url(../image/xin_black.png) 38px 10px no-repeat;
+	overflow: hidden;
+	width: 35px;
+	height: 26px;
+	padding: 8px 32px 0 0;
+	float: right;
+	font-size: 12px;
+	font-weight: 600;
+	text-align: right;
+}
+.picBox{
+	width: 236px;
+	height: 235px;
+	margin-top: 5px;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	background: url(../image/dot.jpg) repeat;
+}
+.picBox a .s_first{
+	max-width: 235px;
+	max-height: 235px;
+	position: absolute;
+	top: 0;
+	left: 38px;
+}
+.picBox a .little{
+	position: absolute;
+	top: 4px;
+	height: 222px;
+	width: 235px;
+}
+.picBox a img{
+	max-width: 235px;
+	max-height: 235px;
+}
+.picBox a .c_1{
+	width: 151px;
+	position: absolute;
+	left: 40px;
+}
+.picBox a .c_2{
+	height: 157.5;
+	position: absolute;
+	top: 40px;
+}
+.picBox a .c_3{
+	height: 192;
+	position: absolute;
+	left: 20px;
+}
+.picBox a .t_3{
+	width: 195px;
+	position: absolute;
+	left: 20px;
+}
+.picBox a .t_4{
+	width: 156.6px;
+	position: absolute;
+	left: 40px;
+}
+/*遮罩层*/
+.s_goodsPrice{
+	display: none;
+	position: absolute;
+	z-index: 100;
+	width: 235px;
+	height: 235px;
+	top: 39px;
+	left: 0;	
+}
+/*bug*/
+.s_goodsItem:hover .s_goodsPrice{
+	display: block;
+}
+.s_goodsTip{
+    background: rgba(0, 0, 0, .45) !important;
+    white-space: nowrap;
+    width: 235px;
+    height: 30px;
+    color: white;
+    padding: 3px 0;
+}
+.s_goodsTip .s_sendIcon{
+	cursor: pointer;
+	display: block;
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-right: 2px;
+	background: url(../image/icon_send.png) center center no-repeat;
+}
+.s_goodsTip .s_money{
+	display: block;
+	width: 60px;
+	height: 22px;
+	float: left;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: left;
+	padding: 5px;
+} 
+.s_shadow{
+	display: block;
+	width: 195px;
+	height: 121px;
+	padding: 60px 20px 20px 20px;
+	clear: both;
+	background: rgba(0, 0, 0, .22) !important;
+	font-size: 13px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 22px;
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+	
+}
+
+/*page*/
+#page{
+	width: 100%;
+	text-align: right;
+	vertical-align: middle;
+	color: #4f4f4f;
+	padding-top: 50px;
+	height: auto;
+	clear: both;
+	font-size: 12px;
+}
+#page a{
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 5px 0 5px;
+	color: #878787;
+	font-size: 13px;
+}
+#page a:hover{
+	background: #CCCCCC;
+	color: white;
+}
+#page .pre{
+	width: 61px;
+	height: 19px;
+	background: url(../img/icon.png) no-repeat;
+	background-position: -23px -580px;
+	border: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+#page .checked{
+	background: #98B5D5;
+	color: white;
+}
+#page .next{
+	width: 61px;
+	height: 19px;
+	background: url(../img/icon.png) no-repeat;
+	background-position: -23px -599px;
+	border: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+#page .goPage{
+	border: 1px solid #98B5D5;
+	width: 24px;
+}
+#page .sureBtn{
+	width: 41px;
+	height: 19px;
+	background: url(../img/icon.png) no-repeat;
+	background-position: -85px -581px;
+	border:  none;
+	cursor: pointer;
+	vertical-align: middle;
+}
